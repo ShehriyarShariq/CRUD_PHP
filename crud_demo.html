@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Forms</title>
+
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/jquery-3.2.1.js"></script>
+  </head>
+  <body>
+    <div id="sideBar">
+      <div id="sideBarIconsList">
+        <div id="selectBooksBtn"><img src="./imgs/book.png" alt="book" /></div>
+        <div id="selectAuthorsBtn">
+          <img src="./imgs/author.png" alt="author" />
+        </div>
+      </div>
+    </div>
+
+    <div id="loader">
+      <img class="loader_img" src="./imgs/loader.gif" alt="loader" />
+    </div>
+
+    <div id="loaded">
+      <div id="formContainer">
+        <h1>Book</h1>
+
+        <div id="newOrExistingSelectors">
+          <div style="text-align: center;">
+            <input id="new" type="radio" name="selector" value="new" />
+            <label id="labelNew" for="new">Add New Book</label>
+          </div>
+
+          <div style="text-align: center;">
+            <input
+              id="existing"
+              type="radio"
+              name="selector"
+              value="existing"
+            />
+            <label id="labelExisting" for="existing"
+              >Edit/Delete Existing Book</label
+            >
+          </div>
+        </div>
+
+        <div id="forms">
+          <form id="bookForm">
+            <label for="bookNum">Book No.</label>
+            <input
+              type="text"
+              id="bookNum"
+              class="disabled"
+              name="bookNum"
+              placeholder="Book Number (ID)"
+              readonly
+            />
+            <select name="bookNumSelector" id="bookNumSelector" class="hidden">
+            </select>
+
+            <div></div>
+            <div id="bookNumSelectorError" class="error">
+              Please select a Book No.
+            </div>
+
+            <label for="title">Title</label>
+            <input
+              type="text"
+              id="title"
+              name="title"
+              placeholder="Book Title"
+            />
+
+            <div></div>
+            <div id="titleError" class="error">Title must not be empty</div>
+
+            <label for="genre">Genre</label>
+            <input
+              type="text"
+              id="genre"
+              name="genre"
+              placeholder="Book Genre"
+            />
+
+            <div></div>
+            <div id="genreError" class="error">Genre must be provided</div>
+
+            <label for="authorNumRef">Author No.</label>
+            <select name="authorNumRef" id="authorNumRef"> </select>
+
+            <div></div>
+            <div id="authorNumRefError" class="error">
+              Please select an Author
+            </div>
+          </form>
+
+          <form id="authorForm">
+            <label for="authorNum">Author No.</label>
+            <input
+              type="text"
+              id="authorNum"
+              class="disabled"
+              name="authorNum"
+              placeholder="Author Number (ID)"
+              readonly
+            />
+            <select
+              name="authorNumSelector"
+              id="authorNumSelector"
+              class="hidden"
+            >
+            </select>
+
+            <div></div>
+            <div id="authorNumSelectorError" class="error">
+              Please select a Author No.
+            </div>
+
+            <label for="fname">First Name</label>
+            <input
+              type="text"
+              id="fname"
+              name="fname"
+              placeholder="First Name"
+            />
+
+            <div></div>
+            <div id="fnameError" class="error">First Name must be provided</div>
+
+            <label for="lname">Last Name</label>
+            <input
+              type="text"
+              id="lname"
+              name="lname"
+              placeholder="Last Name"
+            />
+
+            <div></div>
+            <div id="lnameError" class="error">Last Name must be provided</div>
+          </form>
+
+          <div id="formButtons">
+            <div id="deleteBtn">Delete</div>
+            <div id="clearBtn">Clear</div>
+            <div id="submitBtn">
+              Add Book
+            </div>
+          </div>
+
+          <div id="status" class="status">Title must not be empty</div>
+        </div>
+      </div>
+      <div id="records">
+        <div id="zeroRecords">
+          <h1>No Records Available</h1>
+        </div>
+        <div id="notZeroRecords">
+          <h1>Records</h1>
+          <table id="recordsTable"></table>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/crud_demo.js"></script>
+  </body>
+</html>
